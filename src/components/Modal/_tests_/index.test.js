@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 // __tests__/Modal.test.js with hard coded categories
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";

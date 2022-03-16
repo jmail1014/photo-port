@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 // __tests__/Gallery.test.js
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
@@ -10,18 +11,18 @@ const portrait = {
 
 afterEach(cleanup);
 
-describe("Gallery is rendering", () => {
+describe("Gallery component", () => {
   it("renders", () => {
     render(<Gallery currentCategory={portrait} />);
   });
 
-  it("renders", () => {
+  it("matches snapshot", () => {
     const { asFragment } = render(<Gallery currentCategory={portrait} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
 
-it("renders", () => {
+it("displays text", () => {
   const { getByTestId } = render(<Gallery currentCategory={portrait} />);
   expect(getByTestId("h1tag")).toHaveTextContent("Portraits");
 });
